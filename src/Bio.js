@@ -1,5 +1,5 @@
-// src/Bio.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Bio = () => {
     return (
@@ -15,7 +15,7 @@ const Bio = () => {
                 Currently, I’m building <a href="https://www.syntextai.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'blue', textDecoration: 'underline' }}>SynTextAI</a>, leveraging artificial intelligence to streamline document processing and insights. I am also exploring decentralized finance by running Bitcoin Lightning nodes to enable microtransactions and cross-border payments.
             </p>
             <p>
-                I offer consulting services and training to help turn ideas into products with my 4-Week Program: Build, Launch, and Sell Your Product.
+                I offer consulting services and training to help turn ideas into products with my <Link to="/course" style={{ color: 'blue', textDecoration: 'underline' }}>4-Week Program: Build, Launch, and Sell Your Product</Link>.
             </p>
         </div>
     );

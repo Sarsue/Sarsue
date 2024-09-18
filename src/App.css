@@ -1,3 +1,6 @@
+/* src/App.css */
+
+/* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
@@ -8,8 +11,7 @@ body {
 }
 
 .header {
-  background-color: #4a4a4a;
-  /* Grey header background */
+  background-color: #007bff;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -33,6 +35,7 @@ body {
 nav ul {
   list-style: none;
   padding: 0;
+  text-align: center;
 }
 
 nav ul li {
@@ -68,8 +71,7 @@ main {
 .news-update h1,
 .bio h1 {
   font-size: 2rem;
-  color: #4a4a4a;
-  /* Grey color for headings */
+  color: #007bff;
 }
 
 .course h2,
@@ -99,8 +101,7 @@ main {
 }
 
 .news-update a {
-  color: #4a4a4a;
-  /* Grey color for links */
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -108,29 +109,52 @@ main {
   text-decoration: underline;
 }
 
-/* Additional styles for navigation */
-header nav {
-  margin-top: 20px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .news-item h2 {
+    font-size: 1rem;
+  }
 }
 
-header nav ul {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 1.5rem;
+  }
 
-header nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-}
+  .tagline {
+    font-size: 1rem;
+  }
 
-header nav ul li a {
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-}
+  .description {
+    font-size: 0.8rem;
+  }
 
-header nav ul li a:hover {
-  color: #f4f4f4;
+  .course h1,
+  .news-update h1,
+  .bio h1 {
+    font-size: 1.5rem;
+  }
+
+  .course h2,
+  .news-update h2,
+  .bio h2 {
+    font-size: 1.2rem;
+  }
 }
