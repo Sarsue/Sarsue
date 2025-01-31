@@ -4,132 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Getting Started, Building Products with AI</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css"> <!-- Fixed path -->
+    <script src="markdown-loader.js"></script>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="../index.html">About</a></li>
-                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../index.html">Home</a></li> <!-- Fixed path -->
+                <li><a href="../about.html">About</a></li> <!-- Fixed path -->
             </ul>
         </nav>
     </header>
 
-    <section class="container">
-        <h2>Building Products with AI</h2>
-        <p>Published on January 30, 2025</p>
-
-        <blockquote>
-            "You need three things to create a successful startup: good people, a product customers want, and minimal
-            expenses." - Paul Graham
-        </blockquote>
-
-        <p>AI is accelerating productivity. Soon, billion-dollar companies will operate with just a CEO, CTO, and CFO.
-            The
-            key is solving real problems efficiently.</p>
-
-        <p>Great ideas come from pain points—problems that need solving. Businesses are more willing to pay for
-            solutions
-            than consumers, making B2B more lucrative. Another strategy? Improve existing products: make them
-            open-source,
-            cheaper, region-specific, or tailored to a niche.</p>
-
-        <h3>AI Models Are Like Web Browsers</h3>
-        <p>Just as browsers serve different needs—Chrome for speed, Brave for privacy—AI models will diversify. Expect
-            industry-specific, regional, and open-source alternatives to emerge.</p>
-
-        <h3>Building SyntextAI: Speed, Simplicity, and Scalability</h3>
-        <p>SyntextAI aims to simplify access to information. Existing tools like Perplexity do well, but
-            there’s room for a flexible, multi-format solution tailored to specific industries.</p>
-
-        <p>Global reach is essential. Products should adapt to local languages, regulations, and standards. The MVP
-            phase
-            focuses on speed—deploying a functional prototype quickly to gather real-world feedback.</p>
-
-        <h4>User-Centered Design (UCD)</h4>
-        <p>Syntext follows UCD principles, ensuring usability, accessibility, and intuitive interactions.</p>
-        <p><strong>Core Principles:</strong></p>
-        <ul>
-            <li><strong>Usability & Accessibility:</strong> Simple navigation, minimal cognitive load.</li>
-            <li><strong>Consistency & Familiarity:</strong> Standard UI patterns and design systems.</li>
-            <li><strong>Feedback & Affordances:</strong> Real-time responses, clear visual cues.</li>
-        </ul>
-
-        <h4>MVP Structure</h4>
-        <h5>1. Landing Page with Google Authentication</h5>
-        <p>First impressions matter. A simple landing page with Google Authentication reduces friction and enhances
-            security.</p>
-
-        <h5>2. Core Functionality</h5>
-        <p>The MVP focuses on document processing—uploading, analyzing, and extracting insights—without unnecessary
-            complexity.</p>
-
-        <h5>3. Settings Page with Stripe Integration</h5>
-        <p>Monetization is crucial. Stripe integration allows seamless subscription management from day one.</p>
-
-        <h3>Why This Approach?</h3>
-        <p>Instead of perfecting a product for months, the goal is rapid validation. By leveraging existing tools like
-            Google Auth and Stripe, we focus on delivering immediate value.</p>
-
-        <p>Now that the MVP is live, the next step is gathering feedback, refining UX, and expanding features based on
-            user
-            needs. Success in AI isn't about perfection—it’s about iteration, testing, and solving real problems.</p>
-        <h3> Conclusion </h3>
-        <p> By leveraging AI to guide the development of both React components and Python scripts there's a
-            game-changer in building products efficiently and at scale. AI acts as a catalyst, accelerating the
-            development
-            process by automating tasks, generating reusable code, and optimizing both the frontend and backend. For
-            React
-            components, AI can help create responsive UI elements and structure complex components based on
-            user-centered design
-            principles, saving valuable time and ensuring consistency across the application. On the Python backend, AI
-            can
-            generate scripts for data handling, database interactions, and integrating services like Stripe, allowing
-            you to
-            focus on higher-level tasks while ensuring smooth functionality and scalability.</p>
-
-        <p>The true power of AI comes in its ability to continuously iterate and improve based on real-time feedback. By
-            guiding
-            the AI with your ideas, goals, and evolving needs, you can build a feedback loop that helps the AI refine
-            code and
-            make recommendations for enhancements. Whether it’s optimizing React components for better usability or
-            fine-tuning
-            backend scripts to handle higher volumes of data, AI can provide insights and adjustments that traditional
-            methods
-            often overlook.</p>
-
-        <p>With each iteration, AI helps adapt the product to user behaviors, anticipate needs, and drive better
-            performance,
-            ensuring that you can scale quickly and respond to market demands more efficiently. The process becomes a
-            cycle of
-            constant exploration, where new possibilities are tested and adjusted without the need to start from scratch
-            every
-            time. This continuous improvement, fueled by AI, creates a flexible, agile development environment where
-            your
-            product can evolve and stay competitive in a fast-changing landscape.</p>
-
-        <p>Ultimately, building products with AI isn’t just about speeding up development—it’s about creating a smart,
-            adaptive
-            workflow that keeps you in tune with user needs, optimizes your resources, and allows for rapid testing and
-            adjustments. Instead of aiming for a perfect product from the outset, AI empowers you to experiment, learn,
-            and
-            grow, creating a product that’s not only functional but also aligned with the real-world demands of its
-            users. By
-            using AI to handle both the routine and complex tasks in your development process, you can focus on
-            exploring new
-            ideas and refining your product with the confidence that each iteration will bring you closer to a
-            successful,
-            user-centered solution.</p>
-
+    <!-- Blog Post Section -->
+    <section class="section blog-post active ">
+        <div class="container">
+            <h2>Getting Started, Building Products with AI</h2>
+            <div id="post-content"></div> <!-- This is where the markdown content will go -->
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2025 Osas Emmanuel Igbinedion</p>
+        <img src="../logo.png" alt="Osas Inc Logo" class="footer-logo"> <!-- Fixed path -->
     </footer>
+
+    <!-- JavaScript to Load the Markdown Content and Simple Marked function -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('getting-started.md')
+                .then(response => response.text())
+                .then(content => {
+                    // Initialize markdown-it
+                    const htmlContent = simpleMarked(content); // Convert markdown to HTML
+                    const postContent = document.getElementById('post-content');
+                    console.log(postContent)
+                    postContent.innerHTML = htmlContent;  // Inject the HTML into the page
+                })
+                .catch(error => console.error('Error loading markdown:', error));
+
+        });
+    </script>
 
 </body>
 
