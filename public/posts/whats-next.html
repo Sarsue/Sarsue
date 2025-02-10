@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Next with Syntext AI</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css"> <!-- Fixed path -->
+    <script src="markdown-loader.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li> <!-- Fixed path -->
+                <li><a href="../about.html">About</a></li> <!-- Fixed path -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="section blog-post active ">
+        <div class="container">
+            <h2>What's Next with Syntext AI</h2>
+            <div id="post-content"></div> <!-- This is where the markdown content will go -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Osas Emmanuel Igbinedion</p>
+        <img src="../logo.png" alt="Osas Inc Logo" class="footer-logo"> <!-- Fixed path -->
+    </footer>
+
+    <!-- JavaScript to Load the Markdown Content and Simple Marked function -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('whats-next.md')
+                .then(response => response.text())
+                .then(content => {
+                    // Initialize markdown-it
+                    const htmlContent = simpleMarked(content); // Convert markdown to HTML
+                    const postContent = document.getElementById('post-content');
+                    console.log(postContent)
+                    postContent.innerHTML = htmlContent;  // Inject the HTML into the page
+                })
+                .catch(error => console.error('Error loading markdown:', error));
+
+        });
+    </script>
+
+</body>
+
+</html>
