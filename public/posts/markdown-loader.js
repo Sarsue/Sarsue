@@ -15,17 +15,23 @@ window.simpleMarked = function (content) {
     // Handle images (Markdown Image Syntax: ![alt text](image_url))
     content = content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (match, alt, src) {
         // Ensure the src is correctly processed to an image path
-        // Return the <img> tag
-        return `<img src="${src}" alt="${alt}" />`;
+        return `<img class="responsive-img" src="${src}" alt="${alt}" />`;
     });
-
 
     // Handle links
     content = content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
 
-    // Handle videos (Markdown Video Syntax: [video](video_url))
-    content = content.replace(/\[video\]\(([^)]+)\)/g, '<video controls><source src="$1" type="video/mp4">Your browser does not support the video tag.</video>');
+    // Handle video embeds (YouTube or other video URLs)
+    content = content.replace(/\[video\]\((https:\/\/(www\.)?(youtube|youtu|vimeo)\.[a-z]+\/[^\s]+)\)/g, function (match, url) {
+        // Extract video ID from YouTube URL
+        let videoId = url.match(/(?:youtube\.com\/(?:[^/]+\/\S+|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
 
+        if (videoId) {
+            return `<div class="video-container"><iframe class="responsive-video" src="https://www.youtube.com/embed/${videoId[1]}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        }
+
+        return match; // If not a YouTube video, return the original match (non-YouTube videos).
+    });
 
     // Handle file links (Markdown File Syntax: [file](file_url))
     content = content.replace(/\[file\]\(([^)]+)\)/g, '<a href="$1" download>Download File</a>');
