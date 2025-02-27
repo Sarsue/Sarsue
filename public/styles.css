@@ -142,3 +142,33 @@ footer {
     width: 100%;
     height: 100%;
 }
+
+/* Block Data Container */
+#blockData {
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+#blockData h2 {
+    margin-top: 0;
+    color: #E0E0E0;
+}
+
+#blockData p {
+    margin: 10px 0;
+    color: #B0B0B0;
+}
+
+#blockData p strong {
+    color: #E0E0E0;
+}
+
+#loading {
+    display: none;
+    color: #B0B0B0;
+    text-align: center;
+    margin-top: 20px;
+}
