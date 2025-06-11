@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLMs and Consciousness - Osas Inc Blog</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <!-- Add other nav links if needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Post Content Section -->
+    <section class="container">
+        <div id="blog-content">
+            <!-- Markdown content will be loaded here -->
+            <p>Loading post...</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p> 2025 Osas Emmanuel Igbinedion + AI</p>
+        <img src="../logo.png" alt="Osas Inc Logo" class="footer-logo">
+    </footer>
+
+    <!-- Include marked.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        fetch('extreme-playbook-ai.md') // Changed to the correct markdown file
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(markdown => {
+                const htmlContent = marked.parse(markdown);
+                document.getElementById('blog-content').innerHTML = htmlContent;
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing markdown:', error);
+                document.getElementById('blog-content').innerHTML = '<p>Error loading blog post.</p>';
+            });
+    </script>
+
+    <!-- Add Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+</body>
+</html>
