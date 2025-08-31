@@ -1,31 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     const blogPosts = [
         {
-            title: 'Getting Started with AI',
-            filename: 'getting-started.html',
-            excerpt: 'Learn the fundamentals of building AI-powered products.'
-        },
-        {
-            title: 'Delivering AI: Why AI Alone Won\'t Lead the Future',
-            filename: 'delivering-ai.html',
-            excerpt: 'Exploring the limitations and future of AI implementation.'
-        },
-        {
-            title: 'The Extreme Playbook for AI',
-            filename: 'extreme-playbook-ai.html',
-            excerpt: 'Pushing the boundaries of what\'s possible with artificial intelligence.'
-        },
-        {
-            title: 'LLMs and Consciousness',
-            filename: 'llm-and-consciousness.html',
-            excerpt: 'Exploring the relationship between language models and consciousness.'
+            title: 'The Anatomy of a Successful AI Pilot',
+            filename: 'anatomy-of-successful-ai-pilot.html',
+            excerpt: 'Learn the common pitfalls of AI pilots and a proven 3-step framework for success.',
+            date: '2024-05-10'
         },
         {
             title: 'Sentient Silicon: A Biological Lens',
             filename: 'sentient-silicon.html',
-            excerpt: 'Examining AI through the lens of biological intelligence.'
+            excerpt: 'Examining AI through the lens of biological intelligence.',
+            date: '2024-04-15'
+        },
+        {
+            title: 'LLMs and Consciousness',
+            filename: 'llm-and-consciousness.html',
+            excerpt: 'Exploring the relationship between language models and consciousness.',
+            date: '2024-03-20'
+        },
+        {
+            title: 'The Extreme Playbook for AI',
+            filename: 'extreme-playbook-ai.html',
+            excerpt: 'Pushing the boundaries of what\'s possible with artificial intelligence.',
+            date: '2024-02-15'
+        },
+        {
+            title: 'Delivering AI: Why AI Alone Won\'t Lead the Future',
+            filename: 'delivering-ai.html',
+            excerpt: 'Exploring the limitations and future of AI implementation.',
+            date: '2024-01-10'
+        },
+        {
+            title: 'Getting Started with AI',
+            filename: 'getting-started.html',
+            excerpt: 'Learn the fundamentals of building AI-powered products.',
+            date: '2023-12-01'
         }
-    ];
+    ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
     function renderBlogPosts(posts, containerId) {
         const container = document.getElementById(containerId);
